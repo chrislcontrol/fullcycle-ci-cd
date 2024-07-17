@@ -1,7 +1,6 @@
 name: ci-golang-workflow
 on: 
   pull_request:
-    types: [opened, synchronize, reopened]
     branches:
       - develop
 jobs:
@@ -15,8 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm test
+      
+      - name: Install dependencies
+        run: npm ci ** npm i
+
+      - name: Test and coverage
+        run: npm test
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
