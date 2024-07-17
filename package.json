@@ -1,0 +1,24 @@
+{
+  "name": "fullcycle-ci-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "sonar-scanner": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrislcontrol/fullcycle-ci-cd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrislcontrol/fullcycle-ci-cd/issues"
+  },
+  "homepage": "https://github.com/chrislcontrol/fullcycle-ci-cd#readme"
+}
