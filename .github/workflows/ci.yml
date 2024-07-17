@@ -7,16 +7,24 @@ jobs:
   check-application:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+            fetch-depth: 0
       
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm test
+      
+      - name: Install dependencies
+        run: npm ci ** npm i
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+      - name: Test and coverage
+        run: npm test
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+

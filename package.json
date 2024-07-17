@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --coverageReporters=\"json-summary\""
   },
   "dependencies": {
     "@types/jest": "^29.5.12",
