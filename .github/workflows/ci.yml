@@ -1,8 +1,10 @@
 name: ci-golang-workflow
 on: 
-  pull_request:
+  push:
     branches:
       - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
   check-application:
     runs-on: ubuntu-latest
